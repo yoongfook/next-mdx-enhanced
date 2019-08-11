@@ -31,7 +31,7 @@ module.exports = (pluginOptions = {}) => (nextConfig = {}) => {
     webpack(config, options) {
       // Add mdx webpack loader stack
       config.module.rules.push({
-        test: /\.mdx?$/,
+        test: /\.md?$/,
         use: [
           options.defaultLoaders.babel,
           {
@@ -70,7 +70,7 @@ module.exports = (pluginOptions = {}) => (nextConfig = {}) => {
             return extractFrontMatter(pluginOptions, files, compilation.context)
           },
           files: {
-            pattern: '**/*.mdx',
+            pattern: '**/*.md',
             options: { cwd: config.context },
             addFilesAsDependencies: true
           }

@@ -12,7 +12,7 @@ module.exports = function nextBabelWrapper(nextConfig) {
         ImportDeclaration(_path, state) {
           // if we're not looking at a .mdx file import, do nothing
           const importPath = _path.node.source.value
-          if (!importPath.match(/\.mdx$/)) return
+          if (!importPath.match(/\.md$/)) return
 
           // if there are no "frontMatter" imports, do nothing
           const frontMatterSpecifier = _path.node.specifiers.find(s =>
